@@ -1,0 +1,347 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['bar']});
+            google.charts.setOnLoadCallback(drawChart);
+            
+            function drawChart(n=1,m =1) 
+            {
+                var cat = document.getElementById("category").value;
+                
+                var brand_travel = document.getElementById("brand_travel").value;
+               
+                
+                console.log(cat,sub_clothing,sub_food,sub_travel,brand_clothing,brand_food,brand_travel,n);
+
+                if(n==1)
+                {
+                    var brand_food = document.getElementById("brand_food").value;
+                    var sub_food = document.getElementById("sub_food").value;
+                    if(sub_food == "Pizza" && brand_food=="dominos")
+                    {
+                        var data = google.visualization.arrayToDataTable([
+                    ['Months', 'Sales By Month'],
+                    ['January', 100],
+                    ['February', 300],
+                    ['March', 700],
+                    ['April', 855],
+
+                    ]);
+                    }
+                    else if(sub_food == "Pizza" && brand_food=="pizzahut")
+                    {   
+                        var data = google.visualization.arrayToDataTable([
+                    ['Months', 'Sales By Month'],
+                    ['January', 756],
+                    ['February', 789],
+                    ['March', 579],
+                    ['April', 245],
+
+                ]);        
+                    }
+                    else if(sub_food == "Pizza" && brand_food=="mcdonalds")
+                    {
+                        var data = google.visualization.arrayToDataTable([
+                    ['Months', 'Sales By Month'],
+                    ['January', 560],
+                    ['February', 882],
+                    ['March', 800],
+                    ['April', 776],
+
+                ]);
+                    }
+                    else if(sub_food == "Burger" && brand_food=="pizzahut")
+                    {
+                        var data = google.visualization.arrayToDataTable([
+                    ['Months', 'Sales By Month'],
+                    ['January', 249],
+                    ['February', 496],
+                    ['March', 169],
+                    ['April', 796],
+
+                ]);
+                    }
+                    else if(sub_food == "Burger" && brand_food=="mcdonalds")
+                    {
+                        var data = google.visualization.arrayToDataTable([
+                    ['Months', 'Sales By Month'],
+                    ['January', 190],
+                    ['February', 945],
+                    ['March', 119],
+                    ['April', 892],
+
+                ]);
+                    }
+                    else if(sub_food == "Burger" && brand_food=="dominos")
+                    {
+                        var data = google.visualization.arrayToDataTable([
+                        ['Months', 'Sales By Month'],
+                        ['January', 756],
+                        ['February', 789],
+                        ['March', 579],
+                        ['April', 245],
+
+                    ]);
+                    }
+                    else if(sub_food == "Sandwich" && brand_food=="pizzahut")
+                    {
+                        var data = google.visualization.arrayToDataTable([
+                    ['Months', 'Sales By Month'],
+                    ['January', 208],
+                    ['February', 445],
+                    ['March', 290],
+                    ['April', 658],
+
+                ]);
+
+                    
+                    }
+                    else if(sub_food == "Sandwich" && brand_food=="dominos")
+                    {
+                        var data = google.visualization.arrayToDataTable([
+                    ['Months', 'Sales By Month'],
+                    ['January', 942],
+                    ['February', 645],
+                    ['March', 881],
+                    ['April', 955],
+
+                    ]);
+                    }
+                    
+                }
+                if(n==2)
+                {
+                    var brand_travel = document.getElementById("brand_travel").value;
+                    if(brand_travel == 'A')
+                    {
+                        var data = google.visualization.arrayToDataTable([
+                        ['Months', 'Sales By Month'],
+                        ['January', 100],
+                        ['February', 300],
+                        ['March', 700],
+                        ['April', 855],
+
+                        ]);
+                    }
+                    else if(brand_travel == 'B')
+                    {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Months', 'Sales By Month'],
+                            ['January', 620],
+                            ['February', 245],
+                            ['March', 840],
+                            ['April', 195],
+
+                        ]);
+                    }
+                    else
+                    {
+                        var data = google.visualization.arrayToDataTable([
+                        ['Months', 'Sales By Month'],
+                        ['January', 910],
+                        ['February', 585],
+                        ['March', 120],
+                        ['April', 386],
+
+                        ]);
+
+                    }
+                }
+                if(n==3)
+                {
+                    var brand_clothing = document.getElementById("brand_clothing").value;
+                    if(brand_clothing == "lewis")
+                    {
+                        var data = google.visualization.arrayToDataTable([
+                        ['Months', 'Sales By Month'],
+                        ['January', 100],
+                        ['February', 300],
+                        ['March', 700],
+                        ['April', 855],
+
+                        ]);
+                    }
+                    else if(brand_clothing == "uspolo")
+                    {
+                        var data = google.visualization.arrayToDataTable([
+                        ['Months', 'Sales By Month'],
+                        ['January', 180],
+                        ['February', 645],
+                        ['March', 460],
+                        ['April', 85],
+
+                        ]);
+                    }
+                    else
+                    {
+                        var data = google.visualization.arrayToDataTable([
+                        ['Months', 'Sales By Month'],
+                        ['January', 218],
+                        ['February', 145],
+                        ['March', 240],
+                        ['April', 585],
+
+                        ]);
+                    }
+                }
+
+                var options = 
+                {
+                    chart: 
+                    {
+                        title: 'Sales By Month For:',
+                    },
+
+                    vAxis: 
+                    {
+                        viewWindowMode:'explicit',
+                        viewWindow: 
+                        {
+                            max:1000,
+                            min:500
+                        }
+                    },
+                    bars: 'vertical', 
+                    height: 500
+                };
+
+            var chart = new google.charts.Bar(document.getElementById('chart_div'));
+            chart.draw(data, options);
+
+            }
+      </script>
+  
+        </script>
+
+        
+
+        <script>
+            
+            function defaults()
+            {
+                document.getElementById("sub_travel").style.display = 'none';
+                document.getElementById("sub_clothing").style.display ='none';
+                document.getElementById("brand_travel").style.display = 'none';
+                document.getElementById("brand_clothing").style.display ='none';
+            }
+            function myFunction()
+            {   
+                myFunction1();
+                var element = document.getElementById("category").value ;
+                console.log(element);
+                if(element == "food")
+                {
+                    document.getElementById("sub_travel").style.display = 'none';
+                    document.getElementById("sub_clothing").style.display ='none';
+                    document.getElementById("sub_food").style.display = 'initial';
+                }
+                else if(element == "travel")
+                {
+                    document.getElementById("sub_food").style.display = 'none';
+                    document.getElementById("sub_clothing").style.display ='none';
+                    document.getElementById("sub_travel").style.display = 'initial';
+                }
+                else
+                {
+                    document.getElementById("sub_food").style.display = 'none';
+                    document.getElementById("sub_travel").style.display = 'none';
+                    document.getElementById("sub_clothing").style.display = 'initial';
+                }
+            }
+            function myFunction1()
+            {
+                var element = document.getElementById("category").value ;
+                console.log(element);
+                if(element == "food")
+                {
+                    document.getElementById("brand_travel").style.display = 'none';
+                    document.getElementById("brand_clothing").style.display ='none';
+                    document.getElementById("brand_food").style.display = 'initial';
+                }
+                else if(element == "travel")
+                {
+                    document.getElementById("brand_food").style.display = 'none';
+                    document.getElementById("brand_clothing").style.display ='none';
+                    document.getElementById("brand_travel").style.display = 'initial';
+                }
+                else
+                {
+                    document.getElementById("brand_food").style.display = 'none';
+                    document.getElementById("brand_travel").style.display = 'none';
+                    document.getElementById("brand_clothing").style.display = 'initial';
+                }
+            }
+            
+        </script>
+
+    </head>
+    <body>
+
+        
+
+        <label for="category">Category:</label>
+        <select id="category" name="cars" onchange="myFunction()">
+            <option value="food">Food</option>
+            <option value="travel">Travel</option>
+            <option value="clothing">Clothing</option>
+        </select>
+        
+    
+         
+
+        <label for="product">Product:</label>
+        <select id="sub_food" onchange="drawChart(1)">
+            <option data-group='food' value='Pizza'>Pizza</option>
+            <option data-group='food' value='Burger'>Burger</option>
+            <option data-group='food' value='Sandwich'>Sandwich</option>
+        </select>
+        
+        <select id="sub_travel" onchange="drawChart(2)" >
+            <option data-group='travel' value='A'>A</option>
+            <option data-group='travel' value='B'>B</option>
+            <option data-group='travel' value='C'>C</option>
+        </select>
+
+        <select id="sub_clothing" onchange="drawChart(3)">
+            <option data-group='clothing' value='bralzers'>Bralzers</option>
+            <option data-group='clothing' value='pants'>Pants</option>
+            <option data-group='clothing' value='shirts'>Shirts</option>
+        </select>    
+
+        
+        
+
+
+
+        <label for="Brand">Brand:</label>
+        <select id="brand_food" onchange="drawChart(1)">
+            <option data-group='food' value='dominos'>Dominos</option>
+            <option data-group='food' value='mcdonalds'>Mcdonald's</option>
+            <option data-group='food' value='pizzahut'>Pizzhut</option>
+        </select>
+        
+        <select id="brand_travel" onchange="drawChart(2)" >
+            <option data-group='travel' value='toyota'>Toyota</option>
+            <option data-group='travel' value='mahindra'>Mahindra</option>
+            <option data-group='travel' value='tatamotors'>Tata Motors</option>
+        </select>
+
+        <select id="brand_clothing" onchange="drawChart(3)">
+            <option data-group='clothing' value='lewis'>Lewis</option>
+            <option data-group='clothing' value='twillis'>Twillis</option>
+            <option data-group='clothing' value='uspolo'>U.S. POLO</option>
+        </select>    
+
+
+
+
+        <script type="text/javascript">
+            defaults();
+        </script>
+
+        <div id="chart_div"></div>
+        
+    </body>
+</html>
